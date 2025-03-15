@@ -4,7 +4,7 @@ version = "0.1.2"
 description = "A literate programming tool for static notebook as a library"
 readme = "README.md"
 authors = [
-    { name = "Pietro Peterlongo", email = "pietro.peterlongo@gmail.com" }
+    { name = "Pietro Peterlongo"}
 ]
 requires-python = ">=3.9"
 dependencies = [
