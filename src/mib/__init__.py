@@ -2,7 +2,7 @@ from pydantic import BaseModel, RootModel
 import json
 import markdown
 import os, inspect
-
+from mib import theme
 
 class Block(BaseModel):
     def to_json(self) -> str:
@@ -41,12 +41,16 @@ class Doc(Block):
         return json.dumps([blk.to_json() for blk in self.blocks])
 
     def to_html(self) -> str:
+        head = theme.head
+        blocks = "\n".join([blk.to_html() for blk in self.blocks])
         return f"""
-<html>
-<head>
-</head>
+<!DOCTYPE html>
+<html lang="en-us">
+{head}
 <body>
-  {"\n".join([blk.to_html() for blk in self.blocks])}
+<main>
+{blocks}
+</main>
 </body>
 </html>
 """

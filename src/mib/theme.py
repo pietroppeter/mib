@@ -1,7 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en-us">
-
+head = """
 <head>
   <title>a mib document</title>
   
@@ -9,7 +6,7 @@
   
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="mib" name="generator">
+  <meta content="mib-notebook" name="generator">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/pietroppeter/nimib/assets/atom-one-light.css'>
@@ -17,19 +14,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 </head>
-
-<body>
-<main>
-<h1>Example notebook</h1>
-<p>using <a href="">mib</a></p>
-
-<pre><code class="python">
-print("hello mib")
-</code></pre>
-<pre>
-hello mib
-</pre>
-
-</main>
-</body>
-</html>
+"""
