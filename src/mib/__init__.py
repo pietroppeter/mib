@@ -1,8 +1,9 @@
-from pydantic import BaseModel, RootModel
+from pydantic import BaseModel
 import json
 import markdown
-import os, inspect
+import inspect
 from mib import theme
+
 
 class Block(BaseModel):
     def to_json(self) -> str:
@@ -29,6 +30,7 @@ class Text(Block):
 
     def to_html(self) -> str:
         return markdown.markdown(self.text)
+
 
 def text(self: Block, text: str):
     self.add(Text(text=text))
