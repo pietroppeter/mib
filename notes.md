@@ -26,6 +26,12 @@
 - minimal project info required (license, readme)
 - build and publish on pypi
 
+### basic code with pydantic
+
+serializing a list of pydantic base models is non trivial with pydantic:
+https://github.com/pydantic/pydantic/issues/675
+
+
 ### weird error after renaming
 
 since mib was not an allowed name (not on test pypi), I was trying mib-notebook
