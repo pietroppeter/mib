@@ -30,6 +30,9 @@ class Text(Block):
     def to_html(self) -> str:
         return markdown.markdown(self.text)
 
+def text(self: Block, text: str):
+    self.add(Text(text=text))
+
 
 class Doc(Block):
     blocks: list[Block] = []
@@ -59,3 +62,6 @@ class Doc(Block):
         filename = inspect.stack()[1].filename.replace(".py", ".html")
         with open(filename, "w") as f:
             f.write(self.to_html())
+
+
+Doc.text = text
