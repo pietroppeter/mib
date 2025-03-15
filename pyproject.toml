@@ -1,6 +1,6 @@
 [project]
 name = "mib-notebook"
-version = "0.1.1"
+version = "0.1.2"
 description = "A literate programming tool for static notebook as a library"
 readme = "README.md"
 authors = [

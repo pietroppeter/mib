@@ -46,17 +46,7 @@ class Doc(Block):
     def to_html(self) -> str:
         head = theme.head
         blocks = "\n".join([blk.to_html() for blk in self.blocks])
-        return f"""
-<!DOCTYPE html>
-<html lang="en-us">
-{head}
-<body>
-<main>
-{blocks}
-</main>
-</body>
-</html>
-"""
+        return theme.doc.format(head=head, blocks=blocks)
 
     def save(self):
         filename = inspect.stack()[1].filename.replace(".py", ".html")

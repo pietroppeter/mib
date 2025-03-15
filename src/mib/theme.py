@@ -15,3 +15,15 @@ head = """
   <script>hljs.highlightAll();</script>
 </head>
 """
+
+doc = """
+<!DOCTYPE html>
+<html lang="en-us">
+{head}
+<body>
+<main>
+{blocks}
+</main>
+</body>
+</html>
+"""
