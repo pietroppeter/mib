@@ -14,14 +14,15 @@ dependencies = [
 
 classifiers = [
     "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 license = "MIT"
-license-files = ["LICEN[CS]E*"]
+license-files = ["LICENSE"]
 
 [project.urls]
-Homepage = "https://github.com/pietroppeter/mib"
-Issues = "https://github.com/pietroppeter/mib/issues"
+repository = "https://github.com/pietroppeter/mib"
+issue-tracker = "https://github.com/pietroppeter/mib/issues"
 
 [build-system]
 requires = ["hatchling"]
