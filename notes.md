@@ -22,15 +22,18 @@
 🥳 yes, publish on testpypi works!
 
 
-- add some minimally interesting code
-- minimal project info required (license, readme)
-- build and publish on pypi
+- add some minimally interesting code [x]
+- build and publish on pypi and test with [x]
+- test with [x]
+   uv run --with mib-notebook --no-project -- python -c "import mib"
+   uv run --with mib-notebook --no-project -- python example.py
+- minimal project info required (license, readme, classifier) [x]
+- learn that to publish again I need to bump the version! [x]
 
 ### basic code with pydantic
 
 serializing a list of pydantic base models is non trivial with pydantic:
 https://github.com/pydantic/pydantic/issues/675
-
 
 ### weird error after renaming
 

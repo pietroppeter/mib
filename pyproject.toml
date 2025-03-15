@@ -1,6 +1,6 @@
 [project]
 name = "mib-notebook"
-version = "0.1.0"
+version = "0.1.1"
 description = "A literate programming tool for static notebook as a library"
 readme = "README.md"
 authors = [
@@ -11,6 +11,17 @@ dependencies = [
     "markdown>=3.7",
     "pydantic>=2.10.6",
 ]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/pietroppeter/mib"
+Issues = "https://github.com/pietroppeter/mib/issues"
 
 [build-system]
 requires = ["hatchling"]
