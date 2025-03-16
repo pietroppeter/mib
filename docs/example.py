@@ -2,7 +2,7 @@ import mib
 
 nb = mib.Doc()
 
-nb.text("# Example notebook\nusing [mib](https://github.com/pietroppeter/mib)")
+nb.text("# Example notebook\nmade with [mib](https://github.com/pietroppeter/mib)🐳")
 
 nb.code(lambda: print("hi"))
 
