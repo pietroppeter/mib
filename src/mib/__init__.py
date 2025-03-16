@@ -1,7 +1,9 @@
-from pydantic import BaseModel
-import json
-import markdown
 import inspect
+import json
+
+import markdown
+from pydantic import BaseModel
+
 from mib import theme
 
 

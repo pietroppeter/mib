@@ -30,3 +30,6 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mib"]
+
+[tool.ruff.lint]
+select = ["I"]
