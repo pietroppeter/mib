@@ -29,10 +29,6 @@ doc = """
 """
 
 code = """
-<pre><code class="python">
-{source}
-</code></pre>
-<pre>
-{stdout}
-</pre>
+<pre><code class="python">{source}</code></pre>
+<pre>{stdout}</pre>
 """
