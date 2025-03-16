@@ -27,3 +27,12 @@ doc = """
 </body>
 </html>
 """
+
+code = """
+<pre><code class="python">
+{source}
+</code></pre>
+<pre>
+{stdout}
+</pre>
+"""

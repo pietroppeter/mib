@@ -1,41 +1,19 @@
 import inspect
+import io
 import json
+import sys
+from typing import Callable, Optional
 
 import markdown
 from pydantic import BaseModel
 
+from mib import source
 from mib import theme
 
 
 class Block(BaseModel):
     def to_json(self) -> str:
         return self.model_dump_json()
-
-
-class Code(Block):
-    code: str = ""
-    output: str = ""
-
-    def to_html(self) -> str:
-        return f"""
-<pre><code class="python">
-{self.code}
-</code></pre>
-<pre>
-{self.output}
-</pre>
-"""
-
-
-class Text(Block):
-    text: str = ""
-
-    def to_html(self) -> str:
-        return markdown.markdown(self.text)
-
-
-def text(self: Block, text: str):
-    self.add(Text(text=text))
 
 
 class Doc(Block):
@@ -58,4 +36,42 @@ class Doc(Block):
             f.write(self.to_html())
 
 
+class Text(Block):
+    text: str = ""
+
+    def to_html(self) -> str:
+        return markdown.markdown(self.text)
+
+
+def text(doc: Doc, text: str):
+    doc.add(Text(text=text))
+
+
 Doc.text = text
+
+
+class Code(Block):
+    callable: Optional[Callable] = None
+    source: str = ""
+    stdout: str = ""
+
+    def to_html(self) -> str:
+        return theme.code.format(source=self.source, stdout=self.stdout)
+
+
+def code(doc: Doc, callable: Callable):
+    blk = Code(callable=callable)
+    blk.source = source.getsource(callable)
+
+    _stdout = sys.stdout
+    sys.stdout = io.StringIO()
+
+    blk.callable()
+
+    blk.stdout = sys.stdout.getvalue()
+    sys.stdout = _stdout
+
+    doc.add(blk)
+
+
+Doc.code = code
