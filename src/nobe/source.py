@@ -9,6 +9,8 @@ def _cleanup(source):
     source = re.sub(r"nb\.code\(lambda: (.*?)\)", r"\1", source)
     # Remove nb.code decorator and any function definition
     source = re.sub(r"@nb\.code\s*\ndef \w+\(\):\n", "", source)
+    # remove global variable declarations
+    source = re.sub(r"^\s*global\s+.*$", "", source, flags=re.MULTILINE)
     # Remove indentation using dedent
     return dedent(source).strip()
 

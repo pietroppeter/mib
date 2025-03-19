@@ -22,6 +22,7 @@
 <main>
 <h1>Example notebook</h1>
 <p>made with <a href="https://github.com/pietroppeter/nobe">nobe</a>🐳</p>
+<p>Output of commands is captured (two ways to declare a code block, check in source code)</p>
 
 <pre><code class="python">print("hi")</code></pre>
 <pre>hi
@@ -32,6 +33,47 @@
 <pre>hello
 </pre>
 
+<p>Declare a variable in one block</p>
+
+<pre><code class="python">x = 0</code></pre>
+<pre></pre>
+
+<p>change it in another block and print it</p>
+
+<pre><code class="python">x += 1
+print(x)</code></pre>
+<pre>1
+</pre>
+
+<p>do it 3 times (look for the loop in source code)</p>
+
+<pre><code class="python">@nb.code
+def _():
+
+    x += 1
+    print(x)</code></pre>
+<pre>2
+</pre>
+
+
+<pre><code class="python">@nb.code
+def _():
+
+    x += 1
+    print(x)</code></pre>
+<pre>3
+</pre>
+
+
+<pre><code class="python">@nb.code
+def _():
+
+    x += 1
+    print(x)</code></pre>
+<pre>4
+</pre>
+
+<p>You have to know Python scoping in functions and use global keyword to do the above</p>
 </main>
 </body>
 </html>
