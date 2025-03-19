@@ -37,7 +37,7 @@ wheels = [
 
 [[package]]
 name = "nobe-literate"
-version = "0.1.2"
+version = "0.1.4"
 source = { editable = "." }
 dependencies = [
     { name = "markdown" },
