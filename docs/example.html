@@ -20,12 +20,12 @@
 
 <body>
 <main>
-<h1>Example notebook</h1>
+<h1>Example document</h1>
 <p>made with <a href="https://github.com/pietroppeter/nobe">nobe</a>🐳</p>
 <h2>Capture output</h2>
 <p>Output of commands is captured (two ways to declare a code block, check in source code)</p>
 
-<pre><code class="python">print("hi")</code></pre>
+<pre><code class="python">nb.code(lambda: print("hi"))</code></pre>
 <pre>hi
 </pre>
 
@@ -49,29 +49,20 @@ print(x)</code></pre>
 
 <p>do it 3 times (look for the loop in source code)</p>
 
-<pre><code class="python">@nb.code
-def _():
-
-    x += 1
-    print(x)</code></pre>
+<pre><code class="python">x += 1
+print(x)</code></pre>
 <pre>2
 </pre>
 
 
-<pre><code class="python">@nb.code
-def _():
-
-    x += 1
-    print(x)</code></pre>
+<pre><code class="python">x += 1
+print(x)</code></pre>
 <pre>3
 </pre>
 
 
-<pre><code class="python">@nb.code
-def _():
-
-    x += 1
-    print(x)</code></pre>
+<pre><code class="python">x += 1
+print(x)</code></pre>
 <pre>4
 </pre>
 
@@ -82,12 +73,12 @@ def _():
 
 nb = nobe.Doc()
 
-print(nb.filename)
-
-nb.text(&quot;# Example notebook\nmade with [nobe](https://github.com/pietroppeter/nobe)🐳&quot;)
+nb.text(&quot;# Example document\nmade with [nobe](https://github.com/pietroppeter/nobe)🐳&quot;)
 
 nb.text(&quot;## Capture output&quot;)
-nb.text(&quot;Output of commands is captured (two ways to declare a code block, check in source code)&quot;)
+nb.text(
+    &quot;Output of commands is captured (two ways to declare a code block, check in source code)&quot;
+)
 
 nb.code(lambda: print(&quot;hi&quot;))
 
@@ -129,7 +120,9 @@ for _ in range(3):
         print(x)
 
 
-nb.text(&quot;You have to know Python scoping in functions and use global keyword to do the above&quot;)
+nb.text(
+    &quot;You have to know Python scoping in functions and use global keyword to do the above&quot;
+)
 
 nb.text(f&quot;&quot;&quot;## Source code
 
