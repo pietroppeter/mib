@@ -2,10 +2,10 @@
 
 ### renaming to nobe
 
-- renaming in repo [ ]
+- renaming in repo [x]
 - publishing with new name [x]
-- renaming the repo [ ]
-- remove mib from pypi [ ]
+- renaming the repo [x]
+- remove mib from pypi [x]
 
 ### OSS Turin - March 15
 
