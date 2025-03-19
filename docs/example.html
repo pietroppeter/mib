@@ -22,6 +22,7 @@
 <main>
 <h1>Example notebook</h1>
 <p>made with <a href="https://github.com/pietroppeter/nobe">nobe</a>🐳</p>
+<h2>Capture output</h2>
 <p>Output of commands is captured (two ways to declare a code block, check in source code)</p>
 
 <pre><code class="python">print("hi")</code></pre>
@@ -33,6 +34,7 @@
 <pre>hello
 </pre>
 
+<h2>Accessing variables in blocks</h2>
 <p>Declare a variable in one block</p>
 
 <pre><code class="python">x = 0</code></pre>
@@ -74,6 +76,74 @@ def _():
 </pre>
 
 <p>You have to know Python scoping in functions and use global keyword to do the above</p>
+<h2>Source code</h2>
+<p>This is the source code for this document:</p>
+<pre><code class="language-py">import nobe
+
+nb = nobe.Doc()
+
+print(nb.filename)
+
+nb.text(&quot;# Example notebook\nmade with [nobe](https://github.com/pietroppeter/nobe)🐳&quot;)
+
+nb.text(&quot;## Capture output&quot;)
+nb.text(&quot;Output of commands is captured (two ways to declare a code block, check in source code)&quot;)
+
+nb.code(lambda: print(&quot;hi&quot;))
+
+
+@nb.code
+def _():
+    print(&quot;hello&quot;)
+
+
+nb.text(&quot;## Accessing variables in blocks&quot;)
+
+nb.text(&quot;Declare a variable in one block&quot;)
+
+
+@nb.code
+def _():
+    global x
+    x = 0
+
+
+nb.text(&quot;change it in another block and print it&quot;)
+
+
+@nb.code
+def _():
+    global x
+    x += 1
+    print(x)
+
+
+nb.text(&quot;do it 3 times (look for the loop in source code)&quot;)
+
+for _ in range(3):
+
+    @nb.code
+    def _():
+        global x
+        x += 1
+        print(x)
+
+
+nb.text(&quot;You have to know Python scoping in functions and use global keyword to do the above&quot;)
+
+nb.text(f&quot;&quot;&quot;## Source code
+
+This is the source code for this document:
+
+````py
+{nb.source.replace(&quot;````&quot;, &quot;`````&quot;)}
+````
+
+&quot;&quot;&quot;)
+
+nb.save()
+
+</code></pre>
 </main>
 </body>
 </html>

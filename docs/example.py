@@ -2,9 +2,12 @@ import nobe
 
 nb = nobe.Doc()
 
-nb.text("# Example notebook\nmade with [nobe](https://github.com/pietroppeter/nobe)🐳")
+nb.text("# Example document\nmade with [nobe](https://github.com/pietroppeter/nobe)🐳")
 
-nb.text("Output of commands is captured (two ways to declare a code block, check in source code)")
+nb.text("## Capture output")
+nb.text(
+    "Output of commands is captured (two ways to declare a code block, check in source code)"
+)
 
 nb.code(lambda: print("hi"))
 
@@ -13,6 +16,8 @@ nb.code(lambda: print("hi"))
 def _():
     print("hello")
 
+
+nb.text("## Accessing variables in blocks")
 
 nb.text("Declare a variable in one block")
 
@@ -44,7 +49,18 @@ for _ in range(3):
         print(x)
 
 
-nb.text("You have to know Python scoping in functions and use global keyword to do the above")
+nb.text(
+    "You have to know Python scoping in functions and use global keyword to do the above"
+)
 
+nb.text(f"""## Source code
+
+This is the source code for this document:
+        
+```py
+{nb.source.replace("```", "````")}
+```
+                
+""")
 
 nb.save()

@@ -16,7 +16,14 @@ class Block(BaseModel):
 
 
 class Doc(Block):
+    filename: str = ""
+    source: str = ""
     blocks: list[Block] = []
+
+    def model_post_init(self, __context):
+        self.filename = inspect.stack()[-1].filename
+        with open(self.filename, "r") as f:
+            self.source = f.read()
 
     def add(self, blk: Block):
         self.blocks.append(blk)
@@ -30,7 +37,7 @@ class Doc(Block):
         return theme.doc.format(head=head, blocks=blocks)
 
     def save(self):
-        filename = inspect.stack()[1].filename.replace(".py", ".html")
+        filename = self.filename.replace(".py", ".html")
         with open(filename, "w") as f:
             f.write(self.to_html())
 
@@ -39,7 +46,7 @@ class Text(Block):
     text: str = ""
 
     def to_html(self) -> str:
-        return markdown.markdown(self.text)
+        return markdown.markdown(self.text, extensions=["fenced_code"])
 
 
 def text(doc: Doc, text: str):
