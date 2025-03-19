@@ -1,5 +1,12 @@
 ## Publishing the package
 
+### renaming to nobe
+
+- renaming in repo [ ]
+- publishing with new name [x]
+- renaming the repo [ ]
+- remove mib from pypi [ ]
+
 ### OSS Turin - March 15
 
 - uv init with hatch as build backend [x]

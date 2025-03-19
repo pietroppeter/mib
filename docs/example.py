@@ -1,8 +1,8 @@
-import mib
+import nobe
 
-nb = mib.Doc()
+nb = nobe.Doc()
 
-nb.text("# Example notebook\nmade with [mib](https://github.com/pietroppeter/mib)🐳")
+nb.text("# Example notebook\nmade with [nobe](https://github.com/pietroppeter/nobe)🐳")
 
 nb.code(lambda: print("hi"))
 

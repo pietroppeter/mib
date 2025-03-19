@@ -36,7 +36,7 @@ wheels = [
 ]
 
 [[package]]
-name = "mib-notebook"
+name = "nobe-literate"
 version = "0.1.2"
 source = { editable = "." }
 dependencies = [

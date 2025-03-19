@@ -7,8 +7,7 @@ from typing import Callable, Optional
 import markdown
 from pydantic import BaseModel
 
-from mib import source
-from mib import theme
+from nobe import source, theme
 
 
 class Block(BaseModel):
