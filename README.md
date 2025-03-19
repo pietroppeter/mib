@@ -13,7 +13,7 @@ One way to try this out is:
 
 ```
 curl -O https://raw.githubusercontent.com/pietroppeter/nobe/refs/heads/main/docs/example.py
-uv run --with nobe example.py
+uv run --with nobe-literate example.py
 open example.html
 ```
 
