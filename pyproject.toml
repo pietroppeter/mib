@@ -1,6 +1,6 @@
 [project]
 name = "nobe-literate"
-version = "0.1.2"
+version = "0.1.3"
 description = "A literate programming tool for publishing html documents as a library"
 readme = "README.md"
 authors = [
