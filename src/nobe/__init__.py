@@ -81,3 +81,18 @@ def code(doc: Doc, callable: Callable):
 
 
 Doc.code = code
+
+
+class Image(Block):
+    url: str = ""
+    alt: str = ""
+
+    def to_html(self) -> str:
+        return theme.image.format(url=self.url, alt=self.alt)
+
+
+def image(doc: Doc, url: str, alt=""):
+    doc.add(Image(url=url, alt=alt))
+
+
+Doc.image = image

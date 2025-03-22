@@ -67,6 +67,18 @@ print(x)</code></pre>
 </pre>
 
 <p>You have to know Python scoping in functions and use global keyword to do the above</p>
+<h2>Image</h2>
+
+<img src="https://images.unsplash.com/photo-1565374587194-89003eaebb5b?q=80&w=3271&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt="Mountain background in the dolomites with a small hut and two out of focus cyclists climbing on a road">
+
+
+<pre><code class="python">lambda: nb.image(
+    url="https://images.unsplash.com/photo-1565374587194-89003eaebb5b?q=80&w=3271&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt="Mountain background in the dolomites with a small hut and two out of focus cyclists climbing on a road",
+)</code></pre>
+<pre></pre>
+
+<p>Photo from <a href="https://unsplash.com/it/foto/casa-sullerba-verde-vicino-a-brown-mountain-88Pbp37FjSs">unsplash</a>.</p>
 <h2>Source code</h2>
 <p>This is the source code for this document:</p>
 <pre><code class="language-py">import nobe
@@ -123,6 +135,17 @@ for _ in range(3):
 nb.text(
     &quot;You have to know Python scoping in functions and use global keyword to do the above&quot;
 )
+
+nb.text(&quot;## Image&quot;)
+
+nb.code(
+    lambda: nb.image(
+        url=&quot;https://images.unsplash.com/photo-1565374587194-89003eaebb5b?q=80&amp;w=3271&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;,
+        alt=&quot;Mountain background in the dolomites with a small hut and two out of focus cyclists climbing on a road&quot;,
+    )
+)
+
+nb.text(&quot;Photo from [unsplash](https://unsplash.com/it/foto/casa-sullerba-verde-vicino-a-brown-mountain-88Pbp37FjSs).&quot;)
 
 nb.text(f&quot;&quot;&quot;## Source code
 

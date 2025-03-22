@@ -32,3 +32,7 @@ code = """
 <pre><code class="python">{source}</code></pre>
 <pre>{stdout}</pre>
 """
+
+image = """
+<img src="{url}", alt="{alt}">
+"""
