@@ -62,7 +62,9 @@ nb.code(
     )
 )
 
-nb.text("Photo from [unsplash](https://unsplash.com/it/foto/casa-sullerba-verde-vicino-a-brown-mountain-88Pbp37FjSs).")
+nb.text(
+    "Photo from [unsplash](https://unsplash.com/it/foto/casa-sullerba-verde-vicino-a-brown-mountain-88Pbp37FjSs)."
+)
 
 nb.text(f"""## Source code
 
