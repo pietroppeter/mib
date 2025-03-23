@@ -66,6 +66,23 @@ nb.text(
     "Photo from [unsplash](https://unsplash.com/it/foto/casa-sullerba-verde-vicino-a-brown-mountain-88Pbp37FjSs)."
 )
 
+nb.text("## Latex")
+
+nb.text("""
+Latex support is available thanks to [katex](https://katex.org/)
+with single `$` delimiting inline latex and double `$$` delimit formulas in display mode.
+        
+As an example of inline mode, the [Euler's formula](https://en.wikipedia.org/wiki/Euler%27s_formula)
+is given by $e^{i \pi} + 1 = 0$ where $e$ is the base of the natural logarithm and $i$ is the imaginary unit.
+
+As an example of display mode, here is a convergent [geometric series](https://en.wikipedia.org/wiki/Geometric_series):
+
+$$
+1 + \\frac{1}{2} + \\frac{1}{4} + \cdots = \sum_{k=0}^{+\infty} \\frac{1}{2^k} = 2
+$$        
+""" # note that I have to use a double back slash to avoid typing the "form feed" escape character
+)
+
 nb.text(f"""## Source code
 
 This is the source code for this document:
