@@ -103,6 +103,31 @@ is given by $e^{i \pi} + 1 = 0$ where $e$ is the base of the natural logarithm a
 <p>$$
 1 + \frac{1}{2} + \frac{1}{4} + \cdots = \sum_{k=0}^{+\infty} \frac{1}{2^k} = 2
 $$        </p>
+<h2>Pyscript</h2>
+<p>Pyscript can be used. The default version loaded is:</p>
+
+<mpy-script>
+import sys
+from pyscript import display
+
+display(sys.version)
+</mpy-script>        
+
+<p>Here is an example of a button adding emojis:</p>
+
+<mpy-script>
+from pyscript import document
+
+def add_emoji(event):
+    output = document.createElement("span")
+    output.innerHTML = "🐳"
+    container = document.querySelector("div#emoji-container")
+    container.appendChild(output)
+
+</mpy-script>        
+
+<button mpy-click="add_emoji">More emojis!</button><br/>
+<div id="emoji-container"></div>
 <h2>Source code</h2>
 <p>This is the source code for this document:</p>
 <pre><code class="language-py">import nobe
@@ -189,6 +214,35 @@ $$
 $$        
 &quot;&quot;&quot; # note that I have to use a double back slash to avoid typing the &quot;form feed&quot; escape character
 )
+
+nb.text(&quot;## Pyscript&quot;)
+
+nb.text(&quot;Pyscript can be used. The default version loaded is:&quot;)
+nb.html(&quot;&quot;&quot;
+&lt;mpy-script&gt;
+import sys
+from pyscript import display
+
+display(sys.version)
+&lt;/mpy-script&gt;        
+&quot;&quot;&quot;)
+
+nb.text(&quot;Here is an example of a button adding emojis:&quot;)
+nb.html(&quot;&quot;&quot;
+&lt;mpy-script&gt;
+from pyscript import document
+
+def add_emoji(event):
+    output = document.createElement(&quot;span&quot;)
+    output.innerHTML = &quot;🐳&quot;
+    container = document.querySelector(&quot;div#emoji-container&quot;)
+    container.appendChild(output)
+
+&lt;/mpy-script&gt;        
+&quot;&quot;&quot;)
+
+nb.html(&quot;&lt;button mpy-click=\&quot;add_emoji\&quot;&gt;More emojis!&lt;/button&gt;&lt;br/&gt;&quot;)
+nb.html(&quot;&lt;div id=\&quot;emoji-container\&quot;&gt;&lt;/div&gt;&quot;)
 
 nb.text(f&quot;&quot;&quot;## Source code
 

@@ -83,6 +83,35 @@ $$
 """ # note that I have to use a double back slash to avoid typing the "form feed" escape character
 )
 
+nb.text("## Pyscript")
+
+nb.text("Pyscript can be used. The default version loaded is:")
+nb.html("""
+<mpy-script>
+import sys
+from pyscript import display
+
+display(sys.version)
+</mpy-script>        
+""")
+
+nb.text("Here is an example of a button adding emojis:")
+nb.html("""
+<mpy-script>
+from pyscript import document
+
+def add_emoji(event):
+    output = document.createElement("span")
+    output.innerHTML = "🐳"
+    container = document.querySelector("div#emoji-container")
+    container.appendChild(output)
+
+</mpy-script>        
+""")
+
+nb.html("<button mpy-click=\"add_emoji\">More emojis!</button><br/>")
+nb.html("<div id=\"emoji-container\"></div>")
+
 nb.text(f"""## Source code
 
 This is the source code for this document:
