@@ -96,3 +96,17 @@ def image(doc: Doc, url: str, alt=""):
 
 
 Doc.image = image
+
+
+class Html(Block):
+    html: str = ""
+
+    def to_html(self) -> str:
+        return self.html
+
+
+def html(doc: Doc, html: str):
+    doc.add(Html(html=html))
+
+
+Doc.html = html
